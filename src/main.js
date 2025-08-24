@@ -5,6 +5,8 @@ const MOTD = [
   "Touch Grass today!",
   "Does this rag smell like chloroform to you?",
   "Be cool, there's someone behind you...",
+  "Cracker Barrel sucks.",
+  "Homepage | [hoʊm ˈpædʒeɪ]",
 ];
 
 let motdElement = document.getElementById("motd");
@@ -27,12 +29,10 @@ function buttonClicked(event) {
     case "about":
       let aboutContent = document.getElementById("AboutContent");
       aboutContent.style.display = "inherit";
-      console.log("About button clicked");
       return;
     case "links":
       let linksContent = document.getElementById("LinksContent");
       linksContent.style.display = "inherit";
-      console.log("Links button clicked");
       return;
   }
 }

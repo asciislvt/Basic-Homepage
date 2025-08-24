@@ -14,6 +14,7 @@ body {
 }
 #menu {
   background-color: #e2dccf;
+  display: inline-grid;
   justify-content: center;
   text-align: center;
   padding: 50px;
