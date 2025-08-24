@@ -1,46 +1,40 @@
 :root {
+  font-family: "Lato", sans-serif;
   background-color: #eae5dc;
 }
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
-
 #frame {
   display: flex;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
-
-.menu {
+#menu {
   background-color: #e2dccf;
   justify-content: center;
   text-align: center;
   padding: 50px;
 }
-
-.menu button {
+#menu button {
   margin: 10px auto;
   width: 100px;
 }
-.content {
+#contentDiv {
   background-color: #bf4f3b;
   color: #eae5dc;
   padding: 30px;
 }
-
 #title {
   color: #bf4f3b;
   margin: 0px 0px;
 }
-
 #motd {
   color: #94575f;
   margin-top: 0px;
 }
-
 p {
   color: #322a2a;
 }

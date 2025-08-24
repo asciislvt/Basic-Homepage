@@ -9,17 +9,38 @@ const MOTD = [
 
 let motdElement = document.getElementById("motd");
 let buttonElements = document.getElementsByClassName("ContentButton");
+let contentElements = document.getElementsByClassName("Content");
 
 for (let i = 0; i < buttonElements.length; i++) {
   buttonElements[i].addEventListener("click", buttonClicked);
 }
 
-if (motdElement) {
-  motdElement.innerHTML = getNewMotd();
+motdElement.innerHTML = getNewMotd();
+hideAllContent();
+
+// functions :33
+function buttonClicked(event) {
+  let eventTarget = event.target.id;
+  hideAllContent();
+
+  switch (eventTarget) {
+    case "about":
+      let aboutContent = document.getElementById("AboutContent");
+      aboutContent.style.display = "inherit";
+      console.log("About button clicked");
+      return;
+    case "links":
+      let linksContent = document.getElementById("LinksContent");
+      linksContent.style.display = "inherit";
+      console.log("Links button clicked");
+      return;
+  }
 }
 
-function buttonClicked(event) {
-  console.log("A button was clicked!\n" + " Button Clicked:", event.target.id);
+function hideAllContent() {
+  for (let i = 0; i < contentElements.length; i++) {
+    contentElements[i].style.display = "none";
+  }
 }
 
 function getNewMotd() {
