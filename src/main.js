@@ -12,6 +12,7 @@ const MOTD = [
 let motdElement = document.getElementById("motd");
 let buttonElements = document.getElementsByClassName("ContentButton");
 let contentElements = document.getElementsByClassName("Content");
+let activeContent;
 
 for (let i = 0; i < buttonElements.length; i++) {
   buttonElements[i].addEventListener("click", buttonClicked);
@@ -22,30 +23,20 @@ hideAllContent();
 
 // functions :33
 function buttonClicked(event) {
-  let buttonID = event.target.id;
-  let targetContentID = buttonID + "Content";
-  let activeContent;
+  let buttonId = event.target.id;
+  let targetContentId = buttonId + "Content";
+  let targetContent = document.getElementById(targetContentId);
   hideAllContent();
 
-  console.log("Button ID: " + buttonID);
-  console.log("Target Content ID: " + targetContentID);
-
-  if (activeContent == targetContentID) {
-    console.log("Same button pressed");
+  if (activeContent == targetContentId) {
+    console.log("Hiding content");
+    targetContent.style.display = "none";
+    activeContent = null;
   }
-
-  // switch (eventTarget) {
-  //   case "about":
-  //     let aboutContent = document.getElementById("AboutContent");
-  //     aboutContent.style.display = "inherit";
-  //     activeDiv = aboutContent;
-  //     return;
-  //   case "links":
-  //     let linksContent = document.getElementById("LinksContent");
-  //     linksContent.style.display = "inherit";
-  //     activeDiv = linksContent;
-  //     return;
-  // }
+  else {
+    targetContent.style.display = "inherit";
+    activeContent = targetContentId;
+  }
 }
 
 function hideAllContent() {
