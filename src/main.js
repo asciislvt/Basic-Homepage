@@ -22,19 +22,30 @@ hideAllContent();
 
 // functions :33
 function buttonClicked(event) {
-  let eventTarget = event.target.id;
+  let buttonID = event.target.id;
+  let targetContentID = buttonID + "Content";
+  let activeContent;
   hideAllContent();
 
-  switch (eventTarget) {
-    case "about":
-      let aboutContent = document.getElementById("AboutContent");
-      aboutContent.style.display = "inherit";
-      return;
-    case "links":
-      let linksContent = document.getElementById("LinksContent");
-      linksContent.style.display = "inherit";
-      return;
+  console.log("Button ID: " + buttonID);
+  console.log("Target Content ID: " + targetContentID);
+
+  if (activeContent == targetContentID) {
+    console.log("Same button pressed");
   }
+
+  // switch (eventTarget) {
+  //   case "about":
+  //     let aboutContent = document.getElementById("AboutContent");
+  //     aboutContent.style.display = "inherit";
+  //     activeDiv = aboutContent;
+  //     return;
+  //   case "links":
+  //     let linksContent = document.getElementById("LinksContent");
+  //     linksContent.style.display = "inherit";
+  //     activeDiv = linksContent;
+  //     return;
+  // }
 }
 
 function hideAllContent() {
